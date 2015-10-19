@@ -140,11 +140,13 @@ public class SampleSauceTest implements SauceOnDemandSessionIdProvider {
     public void setUp() throws Exception {
 
     	DesiredCapabilities caps = new DesiredCapabilities();
-    	caps.setCapability(CapabilityType.BROWSER_NAME, System.getenv(SELENIUM_BROWSER));
+    	caps.setBrowserName(System.getenv(SELENIUM_BROWSER);
+    	caps.setVersion(System.getenv(SELENIUM_VERSION);
+    	//caps.setCapability(CapabilityType.BROWSER_NAME, System.getenv(SELENIUM_BROWSER));
         /*if (version != null) {
             caps.setCapability(CapabilityType.VERSION, version);
         }*/
-        caps.setCapability(CapabilityType.VERSION, System.getenv(SELENIUM_VERSION));
+        //caps.setCapability(CapabilityType.VERSION, System.getenv(SELENIUM_VERSION));
         caps.setCapability(CapabilityType.PLATFORM, System.getenv(SELENIUM_PLATFORM));
         caps.setCapability("name", name.getMethodName());
         caps.setCapability("public", "public");
