@@ -58,9 +58,9 @@ public class SampleSauceTest implements SauceOnDemandSessionIdProvider {
      * Constructs a {@link SauceOnDemandAuthentication} instance using the supplied user name/access key.  To use the authentication
      * supplied by environment variables or from an external file, use the no-arg {@link SauceOnDemandAuthentication} constructor.
      */
-	String USERNAME = os.getenv("SAUCE_USERNAME");
-	String ACCESS_KEY = os.getenv("SAUCE_ACCESS_KEY");
-	public SauceOnDemandAuthentication authentication = new SauceOnDemandAuthentication(USERNAME, ACCESS_KEY);
+	public static final String SAUCE_USERNAME = System.getenv("SAUCE_USERNAME");
+	public static final String SAUCE_ACCESS_KEY = System.getenv("SAUCE_ACCESS_KEY");
+	public SauceOnDemandAuthentication authentication = new SauceOnDemandAuthentication(SAUCE_USERNAME, SAUCE_ACCESS_KEY);
     
     /**
      * JUnit Rule which will mark the Sauce Job as passed/failed when the test succeeds or fails.
@@ -140,12 +140,12 @@ public class SampleSauceTest implements SauceOnDemandSessionIdProvider {
     public void setUp() throws Exception {
 
     	DesiredCapabilities caps = new DesiredCapabilities();
-    	caps.setCapability(CapabilityType.BROWSER_NAME, SELENIUM_BROWSER);
+    	caps.setCapability(CapabilityType.BROWSER_NAME, System.getenv(SELENIUM_BROWSER));
         /*if (version != null) {
             caps.setCapability(CapabilityType.VERSION, version);
         }*/
-        caps.setCapability(CapabilityType.VERSION, SELENIUM_VERSION);
-        caps.setCapability(CapabilityType.PLATFORM, SELENIUM_PLATFORM);
+        caps.setCapability(CapabilityType.VERSION, System.getenv(SELENIUM_VERSION));
+        caps.setCapability(CapabilityType.PLATFORM, System.getenv(SELENIUM_PLATFORM));
         caps.setCapability("name", name.getMethodName());
         caps.setCapability("public", "public");
         this.driver = new RemoteWebDriver(
