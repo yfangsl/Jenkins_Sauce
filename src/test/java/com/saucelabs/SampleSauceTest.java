@@ -58,9 +58,9 @@ public class SampleSauceTest implements SauceOnDemandSessionIdProvider {
      * Constructs a {@link SauceOnDemandAuthentication} instance using the supplied user name/access key.  To use the authentication
      * supplied by environment variables or from an external file, use the no-arg {@link SauceOnDemandAuthentication} constructor.
      */
-	public static final String USERNAME = os.getenv("SAUCE_USERNAME");
-	public static final String ACCESS_KEY = os.getenv("SAUCE_ACCESS_KEY");
-    public SauceOnDemandAuthentication authentication = new SauceOnDemandAuthentication(USERNAME, ACCESS_KEY);
+	String USERNAME = os.getenv("SAUCE_USERNAME");
+	String ACCESS_KEY = os.getenv("SAUCE_ACCESS_KEY");
+	public SauceOnDemandAuthentication authentication = new SauceOnDemandAuthentication(USERNAME, ACCESS_KEY);
     
     /**
      * JUnit Rule which will mark the Sauce Job as passed/failed when the test succeeds or fails.
