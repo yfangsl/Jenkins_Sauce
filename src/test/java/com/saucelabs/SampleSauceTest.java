@@ -141,7 +141,7 @@ public class SampleSauceTest implements SauceOnDemandSessionIdProvider {
 
     	DesiredCapabilities caps = new DesiredCapabilities();
     	caps.setBrowserName(SELENIUM_BROWSER);
-    	caps.setVersion((SELENIUM_VERSION);
+    	caps.setVersion(SELENIUM_VERSION);
     	//caps.setCapability(CapabilityType.BROWSER_NAME, System.getenv(SELENIUM_BROWSER));
         /*if (version != null) {
             caps.setCapability(CapabilityType.VERSION, version);
