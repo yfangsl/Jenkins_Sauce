@@ -185,6 +185,16 @@ public class SampleSauceTest implements SauceOnDemandSessionIdProvider {
 		File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
         FileUtils.copyFile(scrFile, new File("c:\\tmp\\screenshot.png")); // Now you can do whatever you need to do with it, for example copy somewhere
     }
+    
+    @Test
+    public void test33542() throws Exception {
+    	driver.get("https://qwww302.americanexpress.com/gns/gnsonline/partner/un_login.do");
+    	Thread.sleep(5000);
+    	driver.findElement(By.id("userid")).sendKeys("Issacuser07");
+    	driver.findElement(By.id("pwd")).sendKeys("Macy2015");
+    	driver.findElement(By.name("submit")).submit();
+    	Thread.sleep(5000);
+    }
 
     /**
      * Closes the {@link WebDriver} session.
