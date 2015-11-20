@@ -51,7 +51,7 @@ import com.saucelabs.saucerest.SauceREST;
  * @author Ross Rowe
  */
 @SuppressWarnings("unused")
-@RunWith(ConcurrentParameterized.class)
+//@RunWith(ConcurrentParameterized.class)
 public class SampleSauceTest implements SauceOnDemandSessionIdProvider {
 
     /**
@@ -106,23 +106,23 @@ public class SampleSauceTest implements SauceOnDemandSessionIdProvider {
      * @param version
      * @param browser
      */
-    public SampleSauceTest(String os, String version, String browser) {
+    /*public SampleSauceTest(String os, String version, String browser) {
         super();
         this.os = os;
         this.version = version;
         this.browser = browser;
-    }
+    }*/
     
-    /*
+    
     public SampleSauceTest() {
         super();
-    }*/
+    }
 
     /**
      * @return a LinkedList containing String arrays representing the browser combinations the test should be run against. The values
      * in the String array are used as part of the invocation of the test constructor
      */
-    @ConcurrentParameterized.Parameters
+    //@ConcurrentParameterized.Parameters
     /*public static LinkedList<String[]> browsersStrings() {
         LinkedList<String[]> browsers = new LinkedList<String[]>();
         browsers.add(new String[]{"Windows 7", "42", "chrome"});
@@ -141,12 +141,12 @@ public class SampleSauceTest implements SauceOnDemandSessionIdProvider {
     public void setUp() throws Exception {
 
     	DesiredCapabilities caps = new DesiredCapabilities();
-    	//caps.setBrowserName(System.getenv("SELENIUM_BROWSER"));
-    	//caps.setVersion(System.getenv("SELENIUM_VERSION"));
-    	caps.setCapability(CapabilityType.BROWSER_NAME, System.getenv(SELENIUM_BROWSER));
-        if (version != null) {
+    	caps.setBrowserName(System.getenv("SELENIUM_BROWSER"));
+    	caps.setVersion(System.getenv("SELENIUM_VERSION"));
+    	//caps.setCapability(CapabilityType.BROWSER_NAME, System.getenv(SELENIUM_BROWSER));
+        /*if (version != null) {
             caps.setCapability(CapabilityType.VERSION, System.getenv(SELENIUM_VERSION));
-        }
+        }*/
         //caps.setCapability(CapabilityType.VERSION, System.getenv(SELENIUM_VERSION));
         caps.setCapability(CapabilityType.PLATFORM, System.getenv("SELENIUM_PLATFORM"));
         caps.setCapability("name", name.getMethodName());
