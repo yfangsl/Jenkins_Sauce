@@ -99,7 +99,7 @@ public class SampleSauceTest implements SauceOnDemandSessionIdProvider {
         }
     };
     
-    public static string buildTag;
+    public static String buildTag;
     private String pageSource;
     
 
