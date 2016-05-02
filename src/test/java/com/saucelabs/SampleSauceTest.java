@@ -93,8 +93,13 @@ public class SampleSauceTest implements SauceOnDemandSessionIdProvider {
     private SauceREST sauceClient;
     
     @Rule
-    public TestName name = new TestName();
+    public TestName name = new TestName() {
+        public String getMethodName() {
+        		return String.format("%s", super.getMethodName());
+        }
+    };
     
+    public static string buildTag;
     private String pageSource;
     
 
@@ -149,7 +154,15 @@ public class SampleSauceTest implements SauceOnDemandSessionIdProvider {
         }
         //caps.setCapability(CapabilityType.VERSION, System.getenv(SELENIUM_VERSION));
         caps.setCapability(CapabilityType.PLATFORM, System.getenv("SELENIUM_PLATFORM"));
-        //caps.setCapability("name", name.getMethodName());
+        
+        String methodName = name.getMethodName();
+        caps.setCapability("name", methodName);
+        
+        if(buildTag != null){
+        	caps.setCapability("build", buildTag);
+        }
+        
+        //caps.setCapability("name", name.getMethodName();;
         //caps.setCapability("build", name.getMethodName() + "__" + System.getenv("BUILD_NUMBER"));
         caps.setCapability("public", "public");
         caps.setCapability("tunnelIdentifier", "test-tun");
