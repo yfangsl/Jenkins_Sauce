@@ -149,8 +149,8 @@ public class SampleSauceTest implements SauceOnDemandSessionIdProvider {
         }
         //caps.setCapability(CapabilityType.VERSION, System.getenv(SELENIUM_VERSION));
         caps.setCapability(CapabilityType.PLATFORM, System.getenv("SELENIUM_PLATFORM"));
-        caps.setCapability("name", name.getMethodName());
-        caps.setCapability("build", name.getMethodName() + "__" + System.getenv("BUILD_NUMBER"));
+        //caps.setCapability("name", name.getMethodName());
+        //caps.setCapability("build", name.getMethodName() + "__" + System.getenv("BUILD_NUMBER"));
         caps.setCapability("public", "public");
         caps.setCapability("tunnelIdentifier", "test-tun");
         this.driver = new RemoteWebDriver(
