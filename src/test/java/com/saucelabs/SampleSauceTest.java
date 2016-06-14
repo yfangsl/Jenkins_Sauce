@@ -165,7 +165,7 @@ public class SampleSauceTest implements SauceOnDemandSessionIdProvider {
         //caps.setCapability("name", name.getMethodName();;
         //caps.setCapability("build", name.getMethodName() + "__" + System.getenv("BUILD_NUMBER"));
         caps.setCapability("public", "public");
-        //caps.setCapability("tunnelIdentifier", "test-tun");
+        caps.setCapability("tunnelIdentifier", "test-tun");
         this.driver = new RemoteWebDriver(
                 new URL("http://" + authentication.getUsername() + ":" + authentication.getAccessKey() + "@ondemand.saucelabs.com:80/wd/hub"),caps);
         this.sessionId = (((RemoteWebDriver) driver).getSessionId()).toString();
