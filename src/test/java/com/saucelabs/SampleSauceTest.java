@@ -130,7 +130,7 @@ public class SampleSauceTest implements SauceOnDemandSessionIdProvider {
     @ConcurrentParameterized.Parameters
     public static LinkedList<String[]> browsersStrings() {
         LinkedList<String[]> browsers = new LinkedList<String[]>();
-        //browsers.add(new String[]{"Windows 7", "42", "chrome"});
+        browsers.add(new String[]{"Windows 7", "42", "chrome"});
         return browsers;
     }
 
