@@ -95,7 +95,7 @@ public class SampleSauceTest implements SauceOnDemandSessionIdProvider {
     @Rule
     public TestName name = new TestName() {
         public String getMethodName() {
-        		return String.format("%s", super.getMethodName());
+           return String.format("%s", super.getMethodName());
         }
     };
     
@@ -150,7 +150,7 @@ public class SampleSauceTest implements SauceOnDemandSessionIdProvider {
     	//caps.setCapability(CapabilityType.BROWSER_NAME, System.getenv(SELENIUM_BROWSER));
         if (version != null) {
             //caps.setCapability(CapabilityType.VERSION, System.getenv(SELENIUM_VERSION));
-            caps.setVersion(System.getenv("SELENIUM_VERSION"));
+            //caps.setVersion(System.getenv("SELENIUM_VERSION"));
         }
         //caps.setCapability(CapabilityType.VERSION, System.getenv(SELENIUM_VERSION));
         caps.setCapability(CapabilityType.PLATFORM, System.getenv("SELENIUM_PLATFORM"));
