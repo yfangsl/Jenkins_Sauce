@@ -155,13 +155,13 @@ public class SampleSauceTest implements SauceOnDemandSessionIdProvider {
         //caps.setCapability(CapabilityType.VERSION, System.getenv(SELENIUM_VERSION));
         caps.setCapability(CapabilityType.PLATFORM, System.getenv("SELENIUM_PLATFORM"));
         
-        /*
+        
         String methodName = name.getMethodName();
         caps.setCapability("name", methodName);
         
         if(buildTag != null){
         	caps.setCapability("build", buildTag);
-        }*/
+        }
         
         //caps.setCapability("name", name.getMethodName();;
         //caps.setCapability("build", name.getMethodName() + "__" + System.getenv("BUILD_NUMBER"));
